@@ -24,8 +24,10 @@
     <ClCompile Include="vecteurs.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="materiaux.h" />
     <ClInclude Include="matrices.h" />
     <ClInclude Include="vecteurs.h" />
+    <ClInclude Include="ville.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
