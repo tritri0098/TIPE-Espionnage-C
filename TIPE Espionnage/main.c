@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "matrices.h"
+#include "ville.h";
+#include "ville.c";
 
 /* ****************** */
 /* *** CONSTANTES *** */
@@ -55,7 +57,7 @@ typedef struct antenne antenne; // Source d'une
 struct coords
 {
     unsigned int x, y; // position en unités de référence
-    float z   // hauteur flottante
+    float z;   // hauteur flottante
 };
 
 struct antenne
@@ -65,7 +67,7 @@ struct antenne
     unsigned char type;      // Type de l'antenne : ISOTROPE / DIPOLAIRE
     float freq;     // Fréquence d'émission réception de l'antenne en Hz
     float gain;     // Gain de l'antenne en dB
-    float impedance // Impédance de l'antenne en Ohm
+    float impedance; // Impédance de l'antenne en Ohm
 };
 
 struct ville
@@ -76,7 +78,7 @@ struct ville
                             // sont les indices des coefficients de 
                             // réflexion correspondant dans la table 
                             // de correspondance REFLEXION
-    antenne* antennes
+    antenne* antennes;
 };
 
 /* ****************** */
@@ -88,6 +90,14 @@ struct ville
 int main()
 {
     printf("Hello ASE\n");
+    city3D c;
+    initCity3D(&c, 500, 400, 300);
+    randomCity3D(&c);
+    saveCity3D(&c);
+
+    printf("\n%s\n", c.name);
+
+    destroyCity3D(&c);
 
     return EXIT_SUCCESS;
 }

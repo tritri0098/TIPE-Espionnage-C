@@ -1,8 +1,5 @@
-#pragma once
-
 #ifndef ANTENNES 
 #define ANTENNES
-#endif
 
 /* *************** */
 /* *** Sources *** */
@@ -32,7 +29,7 @@
 /* ##################################################### */
 
 typedef struct emitter emitter;
-typedef struct receiver receiver
+typedef struct receiver receiver;
 
 struct emitter
 {
@@ -40,6 +37,7 @@ struct emitter
 	double power;
 	double lambda;
 	double pulsation;
+	double position[3]; // la position est exprimée en cordonnées flottantes cartésiennes [0] = x, [1] = y, [2] = z
 };
 
 struct receiver
@@ -47,4 +45,7 @@ struct receiver
 	double frequency;
 	double lambda;
 	double pulsation;
+	double position[3]; // la position est exprimée en cordonnées flottantes cartésiennes [0] = x, [1] = y, [2] = z
 };
+
+#endif

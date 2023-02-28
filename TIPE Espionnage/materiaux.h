@@ -26,6 +26,5 @@ struct materiau
 {
 	double indice_optique;
 	double const_dielec;
-	double 
 	int couleur[3];
 };
