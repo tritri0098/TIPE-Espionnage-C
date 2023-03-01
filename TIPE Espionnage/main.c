@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include "matrices.h"
-#include "ville.h";
-#include "ville.c";
+#include "ville.h"
+#include "ville.c"
+#include "antennes.h"
+#include "antennes.c"
 
 /* ****************** */
 /* *** CONSTANTES *** */
@@ -89,15 +91,20 @@ struct ville
 
 int main()
 {
-    printf("Hello ASE\n");
     city3D c;
-    initCity3D(&c, 500, 400, 300);
+    emitter3D e1 = newEmitter3D(433.0e6, 3.0, 327.5, 682.7, 584.2);
+    emitter3D e2 = newEmitter3D(557.0, 3.0, 367.5, 982.7, 184.2);
+
+    initCity3D(&c, 100, 100, 3000);
     randomCity3D(&c);
+    addEmitter3D(&c, e1);
+    addEmitter3D(&c, e2);
+
     saveCity3D(&c);
 
-    printf("\n%s\n", c.name);
-
     destroyCity3D(&c);
+
+    printf("Ok");
 
     return EXIT_SUCCESS;
 }
